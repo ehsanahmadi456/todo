@@ -8,7 +8,7 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    textTransform: 'capitalize',
+                    textTransform: 'initial',
                     fontFamily: 'Rubik',
                     minWidth: '0',
                 },
@@ -30,7 +30,7 @@ const theme = createTheme({
         },
         secondary: {
             main: "#FFF",
-            contrastText: "#475569",
+            contrastText: "#C165DD",
         },
         success: {
             main: "#F97316",

@@ -2,6 +2,7 @@ import { ReactNode } from "react"
 import Aside from "./Aside"
 import Head from "next/head"
 import Profile from "./Profile"
+import Header from "./Header"
 
 interface IProps {
     children: ReactNode,
@@ -18,8 +19,10 @@ function Layout({ children, title }: IProps) {
             <aside>
                 <Aside />
             </aside>
-            <main>
-                <header>Todo EH</header>
+            <main className="min-w-[calc(100%-417px)]">
+                <header>
+                    <Header />
+                </header>
                 <section>
                     {children}
                 </section>
