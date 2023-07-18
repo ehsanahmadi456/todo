@@ -20,7 +20,11 @@ function Aside() {
     {
       title: 'Todos',
       path: '/',
-      icon: <FormatListBulletedOutlinedIcon style={{ color: setColor(router.pathname === '/') }} fontSize='small' />
+      icon:
+        <FormatListBulletedOutlinedIcon
+          style={{ color: setColor(router.pathname === '/' || router.pathname === '/[...detailId]') }}
+          fontSize='small'
+        />
     },
     {
       title: 'Add Todo',
@@ -45,7 +49,7 @@ function Aside() {
       overflow-hidden py-3 pl-5'
     >
       <Link href='/'>
-        <Title className='!mx-auto text-center mt-12'>
+        <Title className='!mx-auto text-center !mt-12'>
           Todo EH
           <ClearAllIcon />
         </Title>

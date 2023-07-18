@@ -20,10 +20,12 @@ function Layout({ children, title }: IProps) {
                 <Aside />
             </aside>
             <main className="min-w-[calc(100%-417px)]">
-                <header>
-                    <Header />
+                <header className="sticky right-0 top-3 shadow-[0_-12px_0_#FFFFFF] w-full bg-primary z-20">
+                    <div>
+                        <Header />
+                    </div>
                 </header>
-                <section>
+                <section className="px-4">
                     {children}
                 </section>
             </main>

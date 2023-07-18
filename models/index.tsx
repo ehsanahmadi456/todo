@@ -11,3 +11,5 @@ export interface Links {
     path: string,
     icon: ReactElement
 }
+
+export type Todos = any
