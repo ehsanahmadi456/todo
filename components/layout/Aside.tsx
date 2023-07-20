@@ -1,7 +1,7 @@
 import { Title } from '@/mui/customize';
 import Item from './item/Item';
 import Link from 'next/link';
-import { Links } from '@/models';
+import { Links } from '@/globalTypes';
 
 import ClearAllIcon from '@mui/icons-material/ClearAll';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';

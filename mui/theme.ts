@@ -33,8 +33,8 @@ const theme = createTheme({
             contrastText: "#C165DD",
         },
         success: {
-            main: "#F97316",
-            contrastText: "#FFFFFF",
+            main: "#C165DD",
+            contrastText: "#3E3E3E",
         }
     }
 });

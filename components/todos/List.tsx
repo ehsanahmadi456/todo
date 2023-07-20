@@ -1,4 +1,4 @@
-import { Todos } from "@/models"
+import { Todos } from "@/globalTypes"
 import { Tooltip } from '@mui/material';
 import Link from "next/link";
 

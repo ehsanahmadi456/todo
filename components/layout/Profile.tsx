@@ -7,6 +7,7 @@ import { BgButton, Caption, Detail } from '@/mui/customize';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import BorderColorRoundedIcon from '@mui/icons-material/BorderColorRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 
 function Profile() {
 
@@ -48,7 +49,8 @@ function Profile() {
             <div className='flex items-center gap-2 mt-5'>
                 <Button className='!text-sm !rounded-xl !border !border-solid !border-dark-300 !w-full !text-dark-200 py-2 font-medium'>
                     <Link href='/profile'>
-                        Go to profile
+                        Logout
+                        <LogoutRoundedIcon fontSize='small' className='ml-2' />
                     </Link>
                 </Button>
                 <Link href='/profile'>

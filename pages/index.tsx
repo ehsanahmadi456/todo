@@ -1,10 +1,10 @@
 import Layout from "@/components/layout/Layout";
-import Todos from "@/components/todos/Todos";
+import TodosPage from "@/components/todos/TodosPage";
 
 export default function Home() {
   return (
     <Layout title='Home'>
-      <Todos />
+      <TodosPage />
     </Layout>
   )
 }

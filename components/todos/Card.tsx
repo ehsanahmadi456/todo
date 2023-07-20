@@ -1,4 +1,4 @@
-import { Cards } from "@/models"
+import { Cards } from "@/globalTypes"
 import { Detail, Title } from "@/mui/customize"
 
 function Card({ title, detail, icon }: Cards) {

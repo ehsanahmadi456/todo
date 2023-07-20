@@ -13,3 +13,5 @@ export interface Links {
 }
 
 export type Todos = any
+
+export type UserInfo = any

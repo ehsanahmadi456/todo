@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { SmText } from '@/mui/customize';
-import { Links } from '@/models';
+import { Links } from '@/globalTypes';
 import Link from 'next/link';
 
 function Item({ title, icon, path }: Links) {

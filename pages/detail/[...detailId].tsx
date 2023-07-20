@@ -1,10 +1,10 @@
-import DetailTodo from '@/components/detail/DetailTodo'
+import DetailPage from '@/components/detail/DetailPage'
 import Layout from '@/components/layout/Layout'
 
 function Detail() {
   return (
     <Layout title='Detail'>
-      <DetailTodo />
+      <DetailPage />
     </Layout>
   )
 }

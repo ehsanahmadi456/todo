@@ -1,11 +1,12 @@
+import AddTodoPage from "@/components/addTodo/AddTodoPage"
 import Layout from "@/components/layout/Layout"
 
-function AddTodo() {
+function Add() {
   return (
     <Layout title='Add Todo'>
-      <div>AddTodo</div>
+      <AddTodoPage />
     </Layout>
   )
 }
 
-export default AddTodo
+export default Add

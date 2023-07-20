@@ -1,4 +1,4 @@
-import { Cards, Todos } from '@/models';
+import { Cards, Todos } from '@/globalTypes';
 
 import TimelineIcon from '@mui/icons-material/Timeline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -9,7 +9,7 @@ import Image from 'next/image';
 import List from './List';
 import { Title } from '@/mui/customize';
 
-function Todos() {
+function TodosPage() {
 
     const listCard: Cards[] = [
         { title: 'Point', detail: '+5', icon: <TimelineIcon className='!text-svg' /> },
@@ -46,11 +46,11 @@ function Todos() {
                 </div>
             </div>
             <div>
-                <Title className='!text-dark-500 mb-4 mt-8'>Todos:</Title>
+                <Title className='!text-dark-500 mb-4 mt-8'>Todos</Title>
                 <List listTodos={listTodos} />
             </div>
         </div>
     )
 }
 
-export default Todos
+export default TodosPage
