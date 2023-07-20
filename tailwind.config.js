@@ -38,6 +38,7 @@ module.exports = {
         'tertiary': '#5C27FE',
         'dark-300': '#F7F7F9',
         'dark-400': '#F7F8FF',
+        'dark-500': '#F6F7F9',
         'dark-600': '#FCFCFC',
         'success': '#E8FCEF',
         'error': '#FFE8E8',

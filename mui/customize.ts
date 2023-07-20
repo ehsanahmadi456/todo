@@ -1,6 +1,8 @@
 import { styled } from '@mui/material/styles';
 import { Typography, TextField, Button } from "@mui/material";
 
+const Head = styled(Typography)({ fontSize: 30, color: '#FFFFFF', fontWeight: 600 })
+
 const Title = styled(Typography)({ fontSize: 18, color: '#FFFFFF', fontWeight: 600 })
 
 const SmText = styled(Typography)({ fontSize: 14, color: '#FFFFFF', fontWeight: 400 })
@@ -21,4 +23,4 @@ const Input = styled(TextField)({
 
 const BgButton = styled(Button)({ background: 'rgba(92,39,254,0.7) !important', borderRadius: 12 })
 
-export { Title, SmText, Detail, Caption, Form, BgButton, Input };
+export { Title, SmText, Detail, Caption, Form, BgButton, Input, Head };

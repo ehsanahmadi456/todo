@@ -1,5 +1,5 @@
 import Layout from "@/components/register/Layout"
-import SignUpPage from "@/components/register/SignUpPage"
+import SignUpPage from "@/components/register/signup/SignUpPage"
 
 function Signup() {
   return (

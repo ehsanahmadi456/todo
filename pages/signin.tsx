@@ -1,5 +1,5 @@
 import Layout from "@/components/register/Layout"
-import SignInPage from "@/components/register/SignInPage"
+import SignInPage from "@/components/register/signin/SignInPage"
 
 function Signin() {
     return (

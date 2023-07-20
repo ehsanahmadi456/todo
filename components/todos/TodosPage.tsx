@@ -46,7 +46,7 @@ function TodosPage() {
                 </div>
             </div>
             <div>
-                <Title className='!text-dark-500 mb-4 mt-8'>Todos</Title>
+                <Title className='!text-dark-500 mb-4 ml-4 mt-8'>Todos</Title>
                 <List listTodos={listTodos} />
             </div>
         </div>
