@@ -15,7 +15,6 @@ function FormUser({ userDetail, setUserDetail, changeHandler }: IProps) {
         <Field type='text' placeholder='First Name' name='firstName' value={userDetail.firstName} onChange={changeHandler} />
         <Field type='text' placeholder='Last Name' name='lastName' value={userDetail.lastName} onChange={changeHandler} />
       </div>
-      <Field type='email' placeholder='Email' name='email' value={userDetail.email} onChange={changeHandler} />
       <Field type='number' placeholder='Contacts Number' name='phone' value={userDetail.phone} onChange={changeHandler} />
       <Field type='text' placeholder='Address' name='address' value={userDetail.address} onChange={changeHandler} />
       <div className="flex items-center justify-center gap-8">

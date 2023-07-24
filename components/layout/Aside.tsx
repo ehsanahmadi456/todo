@@ -1,14 +1,15 @@
-import { Title } from '@/mui/customize';
+import { BgButton, Title } from '@/mui/customize';
 import Item from './item/Item';
 import Link from 'next/link';
 import { Links } from '@/globalTypes';
+import { useRouter } from 'next/router';
 
+import InfoIcon from '@mui/icons-material/InfoOutlined';
 import ClearAllIcon from '@mui/icons-material/ClearAll';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
-import InfoIcon from '@mui/icons-material/InfoOutlined';
-import { useRouter } from 'next/router';
+import KeyboardDoubleArrowLeftRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowLeftRounded';
 
 function Aside() {
 
@@ -22,7 +23,7 @@ function Aside() {
       path: '/',
       icon:
         <FormatListBulletedOutlinedIcon
-          style={{ color: setColor(router.pathname === '/' || router.pathname === '/[...detailId]') }}
+          style={{ color: setColor(router.pathname === '/' || router.pathname === '/detail/[...detailId]' || router.pathname === '/edit/[...detailId]') }}
           fontSize='small'
         />
     },
@@ -48,6 +49,9 @@ function Aside() {
       className='bg-gradient-to-br from-[#C165DD] to-[#5C27FE] sticky h-[calc(100vh-24px)] left-0 top-3 w-48 rounded-2xl 
       overflow-hidden py-3 pl-5'
     >
+      <BgButton className='!p-2 !absolute !right-2 !top-2 !bg-primary'>
+        <KeyboardDoubleArrowLeftRoundedIcon className='!text-tertiary' />
+      </BgButton>
       <Link href='/'>
         <Title className='!mx-auto text-center !mt-12'>
           Todo EH

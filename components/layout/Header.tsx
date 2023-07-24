@@ -3,16 +3,12 @@ import { InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import Link from 'next/link';
 
-import KeyboardDoubleArrowLeftRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowLeftRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 
 function Header() {
     return (
         <div className="flex items-center justify-between px-4 w-full bg-primary p-4">
             <div className='flex items-center gap-2'>
-                <BgButton className='!p-2'>
-                    <KeyboardDoubleArrowLeftRoundedIcon color='secondary' />
-                </BgButton>
                 <Form
                     placeholder='Search...'
                     variant="standard"

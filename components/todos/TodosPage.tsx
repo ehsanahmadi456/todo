@@ -1,32 +1,34 @@
 import { Cards, Todos } from '@/globalTypes';
+import Card from './Card';
+import Image from 'next/image';
+import List from './List';
+import { Title } from '@/mui/customize';
+import { CircularProgress } from '@mui/material';
 
 import TimelineIcon from '@mui/icons-material/Timeline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import InsertInvitationRoundedIcon from '@mui/icons-material/InsertInvitationRounded';
 import FormatListNumberedRoundedIcon from '@mui/icons-material/FormatListNumberedRounded';
-import Card from './Card';
-import Image from 'next/image';
-import List from './List';
-import { Title } from '@/mui/customize';
 
-function TodosPage() {
+interface IProps {
+    todos: Todos[],
+    country: string,
+    isLoading: boolean,
+    getTodo: () => void
+}
+
+function TodosPage({ todos, country, isLoading, getTodo }: IProps) {
+
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    let formattedDate = year + '/' + month;
 
     const listCard: Cards[] = [
-        { title: 'Point', detail: '+5', icon: <TimelineIcon className='!text-svg' /> },
-        { title: 'Location', detail: 'Iran', icon: <LocationOnIcon className='!text-svg' /> },
-        { title: 'Date', detail: '2023/07', icon: <InsertInvitationRoundedIcon className='!text-svg' /> },
-        { title: 'List Todo', detail: '7', icon: <FormatListNumberedRoundedIcon className='!text-svg' /> },
-    ]
-
-    const listTodos: Todos[] = [
-        { id: 1, title: 'Work', detail: 'von 10 uhr bis 12 uhr muss ich arbeite', status: 'd' },
-        { id: 2, title: 'Draussen', detail: 'gehe sie nach draussen und trink etwas', status: 'f' },
-        { id: 3, title: 'Freundin', detail: 'Sehe sie ihre Freundin', status: 't' },
-        { id: 4, title: 'Kaufen', detail: 'kaufe mir etwas aus der Apotheke', status: 'f' },
-        { id: 5, title: 'Work', detail: 'von 10 uhr bis 12 uhr muss ich arbeite', status: 'd' },
-        { id: 6, title: 'Draussen', detail: 'gehe sie nach draussen und trink etwas', status: 'f' },
-        { id: 7, title: 'Freundin', detail: 'Sehe sie ihre Freundin', status: 't' },
-        { id: 8, title: 'Kaufen', detail: 'kaufe mir etwas aus der Apotheke', status: 'n' },
+        { title: 'Point', detail: todos && todos.length === 0 ? 0 : todos?.filter(item => item.status === 'f').length, icon: <TimelineIcon className='!text-svg' /> },
+        { title: 'Location', detail: country, icon: <LocationOnIcon className='!text-svg' /> },
+        { title: 'Date', detail: formattedDate, icon: <InsertInvitationRoundedIcon className='!text-svg' /> },
+        { title: 'List Todo', detail: `+${todos && todos.length || ''}`, icon: <FormatListNumberedRoundedIcon className='!text-svg' /> },
     ]
 
     return (
@@ -47,7 +49,13 @@ function TodosPage() {
             </div>
             <div>
                 <Title className='!text-dark-500 mb-4 ml-4 mt-8'>Todos</Title>
-                <List listTodos={listTodos} />
+                {!isLoading ? (
+                    <List listTodos={todos} getTodo={getTodo} />
+                ) : (
+                    <div className='min-h-[200px] flex justify-center items-center'>
+                        <CircularProgress className='!text-tertiary' />
+                    </div>
+                )}
             </div>
         </div>
     )

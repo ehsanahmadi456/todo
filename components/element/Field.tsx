@@ -1,7 +1,16 @@
-import { Todos } from "@/globalTypes"
 import { Input } from "@/mui/customize"
+import { ChangeEvent } from "react"
 
-function Field({ placeholder, name, value, onChange, type }: Todos) {
+interface IProps {
+    placeholder: string,
+    disabled?: boolean,
+    name: string,
+    value: string,
+    type: string,
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void,
+}
+
+function Field({ disabled, placeholder, name, value, onChange, type }: IProps) {
     return (
         <Input
             className='w-full'
@@ -12,6 +21,7 @@ function Field({ placeholder, name, value, onChange, type }: Todos) {
                 },
             }}
             placeholder={placeholder}
+            disabled={disabled}
             onChange={onChange}
             value={value}
             label={name}

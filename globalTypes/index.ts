@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 export interface Cards {
     title: string,
-    detail: string,
+    detail: string | number,
     icon: ReactElement
 }
 
@@ -12,6 +12,11 @@ export interface Links {
     icon: ReactElement
 }
 
-export type Todos = any
+export interface Todos {
+    _id?: string,
+    title: string,
+    detail: string,
+    status: string
+}
 
 export type UserInfo = any

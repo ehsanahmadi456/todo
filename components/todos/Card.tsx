@@ -4,7 +4,7 @@ import { Detail, Title } from "@/mui/customize"
 function Card({ title, detail, icon }: Cards) {
     return (
         <li
-            className="p-5 border border-dark-300 rounded-2xl overflow-hidden relative after:absolute after:bottom-0
+            className="p-4 border border-dark-300 rounded-2xl overflow-hidden relative after:absolute after:bottom-0
             after:right-0  after:w-12 after:h-12 after:bg-light-tertiary after:opacity-60 after:hover:w-32 cursor-pointer
             after:hover:h-32 after:hover:transition-all after:hover:duration-700 after:hover:ease-in-out after:rounded-tl-full
             before:absolute before:bottom-0 before:right-0  before:w-8 before:h-2 before:bg-light-100-tertiary before:opacity-60 

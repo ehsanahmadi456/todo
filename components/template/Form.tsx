@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, Dispatch, SetStateAction } from "react"
 import { Todos } from "@/globalTypes"
 import Field from "../element/Field";
 import { FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material";
@@ -6,7 +6,8 @@ import { Detail } from "@/mui/customize";
 
 interface IProps {
     from: string,
-    data?: Todos
+    data: Todos,
+    setData: Dispatch<SetStateAction<Todos>>
 }
 
 interface Status {
@@ -16,7 +17,7 @@ interface Status {
     color: string,
 }
 
-function Form({ from }: IProps) {
+function Form({ from, data, setData }: IProps) {
 
     const status: Status[] = [
         { status: 'Finished', bgColor: 'bg-success', color: 'text-success', codeColor: '#16E25D' },
@@ -25,10 +26,6 @@ function Form({ from }: IProps) {
         { status: 'Todo', bgColor: 'bg-disable', color: 'text-disable', codeColor: '#B8B8B8' }
     ]
 
-    const [data, setData] = useState({
-        title: 'Work', detail: 'von 1 uhr bis 3 uhr ich habe gearbeitet', status: 'f'
-    });
-
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) =>
         setData({ ...data, [e.target.name]: e.target.value });
 
@@ -36,8 +33,8 @@ function Form({ from }: IProps) {
         <div className="mt-4">
             <Detail className="!mb-2 !mt-2">Caption: </Detail>
             <div className="flex flex-row !mt-4 items-start gap-7">
-                <Field type='text' placeholder='Title...' name='title' value={data.title} onChange={changeHandler} />
-                <Field type='text' placeholder='Detail' name='detail' value={data.detail} onChange={changeHandler} />
+                <Field disabled={from === 'detail'} type='text' placeholder='Title...' name='title' value={data.title} onChange={changeHandler} />
+                <Field disabled={from === 'detail'} type='text' placeholder='Detail' name='detail' value={data.detail} onChange={changeHandler} />
             </div>
             <FormControl>
                 <Detail className="!mb-2 !mt-6">Status: </Detail>
@@ -49,6 +46,7 @@ function Form({ from }: IProps) {
                 >
                     {status.map((item, idx) => (
                         <FormControlLabel
+                            disabled={from === 'detail'}
                             key={idx}
                             className={`!${item.bgColor} ${item.color} !py-2 !pl-2 !pr-4 !rounded-2xl`}
                             control={

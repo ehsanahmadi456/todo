@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode, useEffect } from "react"
 import Aside from "./Aside"
 import Head from "next/head"
 import Profile from "./Profile"
@@ -14,7 +14,7 @@ function Layout({ children, title }: IProps) {
         <div className="bg-dark-600 flex m-3">
             <Head>
                 <link rel="shortcut icon" href="/favicon.ico" />
-                <title>{title} | Todo Eh</title>
+                <title>{`${title} | Todo Eh`}</title>
             </Head>
             <aside>
                 <Aside />
