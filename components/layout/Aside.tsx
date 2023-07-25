@@ -26,7 +26,7 @@ function Aside() {
       icon:
         <FormatListBulletedOutlinedIcon
           className='dark:!text-primary'
-          style={{ color: setColor(router.pathname === '/[[...index]]' || router.pathname === '/detail/[...todoId]' || router.pathname === '/edit/[...todoId]') }}
+          style={{ color: setColor(router.pathname === '/' || router.pathname === '/detail/[...todoId]' || router.pathname === '/edit/[...todoId]') }}
           fontSize='small'
         />
     },

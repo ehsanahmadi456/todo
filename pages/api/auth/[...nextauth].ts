@@ -1,21 +1,19 @@
 import User from "@/models/User";
 import { verifyPassword } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
-import { isValidEmail, isValidFirstName, isValidPassword } from "@/utils/validation";
+import { isValidEmail, isValidPassword } from "@/utils/validation";
+import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-export default NextAuth({
+const authOptions: NextAuthOptions = {
     session: { strategy: 'jwt' },
     providers: [
         CredentialsProvider({
-            name: "Credentials",
-            credentials: {
-                username: { label: "Username", type: "text", placeholder: "jsmith" },
-                password: { label: "Password", type: "password" }
-            },
-            async authorize(credentials: any, req) {
-                const { email, password } = req.body;
+            type: "credentials",
+            credentials: {},
+            async authorize(credentials, req) {
+                const { email, password } = req.body
 
                 try {
                     await connectDB();
@@ -37,8 +35,10 @@ export default NextAuth({
 
                 if (!isValid) throw new Error('Username or password is incorrect!');
 
-                return { email };
+                return { email: email, id: '12' };
             }
         })
     ]
-});
+}
+
+export default NextAuth(authOptions);

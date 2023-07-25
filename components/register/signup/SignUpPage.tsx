@@ -38,8 +38,8 @@ function SignUpPage() {
       <Title className="!text-light-tertiary w-full text-left">Sign Up:</Title>
       <div className="w-20 h-1 bg-light-tertiary mr-auto rounded-2xl my-2"></div>
       <div className="flex items-start justify-center flex-col w-full mt-12">
-        <Head className="!text-dark-500">Hey, Hello 👋</Head>
-        <Caption>Enter the information for signup</Caption>
+        <Head className="!text-dark-500 dark:!text-dark-400">Hey, Hello 👋</Head>
+        <Caption className='dark:!text-dark-300'>Enter the information for signup</Caption>
       </div>
       <div className="flex flex-col gap-4 items-center justify-center w-full my-6">
         <Input value={data.firstName} type='text' name='firstName' placeholder='name' changeHandler={changeHandler}>

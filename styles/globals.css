@@ -16,3 +16,8 @@ body {
 svg {
   cursor: pointer;
 }
+
+.css-1dz29jp-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root.MuiLoadingButton-loading,
+.css-1dl4lf-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root.Mui-disabled {
+  background: #939393;
+}

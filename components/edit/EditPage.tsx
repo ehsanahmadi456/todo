@@ -27,6 +27,7 @@ function EditPage({ todo }: IProps) {
         request.updateTodo(id[0], title, detail, status)
             .then(() => {
                 setIsLoading(false)
+                router.push('/')
             })
     }
 

@@ -12,7 +12,7 @@ import FormatListNumberedRoundedIcon from '@mui/icons-material/FormatListNumbere
 
 interface IProps {
     todos: Todos[],
-    search: string,
+    search: string | string[],
     country: string,
     isLoading: boolean,
     getTodo: () => void

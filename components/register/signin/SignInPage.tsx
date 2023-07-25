@@ -40,8 +40,8 @@ function SignInPage() {
       <Title className="!text-light-tertiary w-full text-left">Sign In:</Title>
       <div className="w-20 h-1 bg-light-tertiary mr-auto rounded-2xl my-2"></div>
       <div className="flex items-start justify-center flex-col w-full mt-12">
-        <Head className="!text-dark-500">Hey, Welcome 👋</Head>
-        <Caption>Enter the information you entered while registering</Caption>
+        <Head className="!text-dark-500 dark:!text-dark-400">Hey, Welcome 👋</Head>
+        <Caption className='dark:!text-dark-300'>Enter the information you entered while registering</Caption>
       </div>
       <div className="flex flex-col gap-4 items-center justify-center w-full my-6">
         <Input value={data.email} type='text' name='email' placeholder='you@example.com' changeHandler={changeHandler}>

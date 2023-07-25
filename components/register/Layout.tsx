@@ -19,7 +19,8 @@ function Layout({ children, title }: IProps) {
             <div
                 className='h-screen hidden relative w-1/2 bg-light-tertiary sm:flex flex-col items-center justify-center
                 rounded-tr-[150px] after:absolute after:w-[150px] after:h-[150px] after:-bottom-0 after:-right-[150px]
-                after:rounded-bl-[150px] after:bg-transparent after:shadow-[-50px_50px_0_50px_#8D67FE]'
+                after:rounded-bl-[150px] after:bg-transparent after:shadow-[-50px_50px_0_50px_#8D67FE] 
+                dark:after:!shadow-[-50px_50px_0_50px_#4620B7]'
             >
                 <div className='flex flex-col items-center justify-center'>
                     <ClearAllRoundedIcon

@@ -10,7 +10,7 @@ import { Caption, Detail } from "@/mui/customize";
 import request from '@/services/request';
 
 interface IProps {
-    search: string,
+    search: string | string[],
     listTodos: Todos[],
     getTodo: () => void
 }
