@@ -18,10 +18,6 @@ const userSchema = new Schema({
     address: String,
     country: String,
     city: String,
-    profile: {
-        data: Buffer,
-        contentType: String
-    },
     todos: [{ title: String, detail: String, status: String }],
     createdAt: {
         type: Date,
