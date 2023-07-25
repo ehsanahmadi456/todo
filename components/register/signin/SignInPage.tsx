@@ -22,7 +22,7 @@ function SignInPage() {
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) =>
     setData({ ...data, [e.target.name]: e.target.value });
 
-  const signinHandler = async () => {
+  const signinHandler = (e) => {
     const { email, password } = data
     setIsLoading(true)
     signIn('credentials', {
@@ -32,7 +32,7 @@ function SignInPage() {
         setIsLoading(false)
         if (!res.error) router.push('/')
       })
-
+    e.preventDefault();
   }
 
   return (
@@ -45,10 +45,10 @@ function SignInPage() {
       </div>
       <div className="flex flex-col gap-4 items-center justify-center w-full my-6">
         <Input value={data.email} type='text' name='email' placeholder='you@example.com' changeHandler={changeHandler}>
-          <MailOutlineOutlinedIcon className='bg-primary h-10 w-10 rounded-lg p-[9px] -translate-x-2 !text-light-tertiary' fontSize='small' />
+          <MailOutlineOutlinedIcon className='bg-primary !h-10 !w-10 rounded-lg p-[9px] -translate-x-2 !text-light-tertiary' fontSize='small' />
         </Input>
         <Input value={data.password} type='password' name='password' placeholder='*******' changeHandler={changeHandler}>
-          <KeyOutlinedIcon className='bg-primary h-10 w-10 rounded-lg p-[9px] -translate-x-2 !text-light-tertiary' fontSize='small' />
+          <KeyOutlinedIcon className='bg-primary !h-10 !w-10 rounded-lg p-[9px] -translate-x-2 !text-light-tertiary' fontSize='small' />
         </Input>
       </div>
       <LoadingButton
@@ -63,7 +63,7 @@ function SignInPage() {
       <div className='flex items-center justify-center mt-8'>
         <Detail className='!text-dark-200'>Don't you have an account? </Detail>
         <Link href='/signup'>
-          <Detail className='ml-1 text-light-tertiary'>SignUp</Detail>
+          <Detail className='!ml-1 !text-light-tertiary'>SignUp</Detail>
         </Link>
       </div>
     </div>

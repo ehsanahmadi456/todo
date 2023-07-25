@@ -28,7 +28,7 @@ function AboutPage() {
                 Furthermore, I am passionate about delivering high-quality code and creating exceptional user experiences. I have a keen eye for design and am capable of translating complex ideas into sleek and user-friendly interfaces. With my expertise and dedication, I can be an invaluable asset to any front-end development team, creating value for what I am passionate about.
             </p>
             <div>
-                <Title className="!text-dark-500 mt-6 mb-3 dark:!text-dark-400">Contact Us:</Title>
+                <Title className="!text-dark-500 !mt-6 !mb-3 dark:!text-dark-400">Contact Us:</Title>
                 <div className="flex flex-col items-start justify-center gap-4">
                     <a href="tel:+989961177886" target="_blank">
                         <div className="flex flex-wrap items-center justify-start gap-2" >

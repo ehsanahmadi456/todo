@@ -43,13 +43,22 @@ function SignUpPage() {
       </div>
       <div className="flex flex-col gap-4 items-center justify-center w-full my-6">
         <Input value={data.firstName} type='text' name='firstName' placeholder='name' changeHandler={changeHandler}>
-          <PersonOutlineOutlinedIcon className='bg-primary h-10 w-10 rounded-lg p-2 -translate-x-2 !text-light-tertiary' fontSize='small' />
+          <PersonOutlineOutlinedIcon
+            className='bg-primary !h-10 !w-10 rounded-lg p-2 -translate-x-2 !text-light-tertiary'
+            fontSize='small'
+          />
         </Input>
         <Input value={data.email} type='email' name='email' placeholder='you@example.com' changeHandler={changeHandler}>
-          <MailOutlineOutlinedIcon className='bg-primary h-10 w-10 rounded-lg p-[9px] -translate-x-2 !text-light-tertiary' fontSize='small' />
+          <MailOutlineOutlinedIcon
+            className='bg-primary !h-10 !w-10 rounded-lg p-[9px] -translate-x-2 !text-light-tertiary'
+            fontSize='small'
+          />
         </Input>
         <Input value={data.password} type='password' name='password' placeholder='*******' changeHandler={changeHandler}>
-          <KeyOutlinedIcon className='bg-primary h-10 w-10 rounded-lg p-[9px] -translate-x-2 !text-light-tertiary' fontSize='small' />
+          <KeyOutlinedIcon
+            className='bg-primary !h-10 !w-10 rounded-lg p-[9px] -translate-x-2 !text-light-tertiary'
+            fontSize='small'
+          />
         </Input>
       </div>
       <LoadingButton
@@ -66,7 +75,7 @@ function SignUpPage() {
       <div className='flex items-center justify-center mt-8'>
         <Detail className='!text-dark-200'>Already have an account? </Detail>
         <Link href='/signin'>
-          <Detail className='ml-1 text-light-tertiary'>SignIn</Detail>
+          <Detail className='!ml-1 !text-light-tertiary'>SignIn</Detail>
         </Link>
       </div>
     </div>

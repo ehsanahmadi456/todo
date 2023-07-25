@@ -8,8 +8,10 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 const authOptions: NextAuthOptions = {
     session: { strategy: 'jwt' },
+    secret: process.env.SECRET,
     providers: [
         CredentialsProvider({
+            name: "Credentials",
             type: "credentials",
             credentials: {},
             async authorize(credentials, req) {
@@ -35,8 +37,8 @@ const authOptions: NextAuthOptions = {
 
                 if (!isValid) throw new Error('Username or password is incorrect!');
 
-                return { email: email, id: '12' };
-            }
+                return { email, password, id: '' };
+            },
         })
     ]
 }
