@@ -65,7 +65,7 @@ function TodosPage({ todos, country, isLoading, search, getTodo }: IProps) {
                 </div>
             </div>
             <div className='grid'>
-                <Title className='!text-dark-500 mb-4 ml-4 mt-8 dark:!text-dark-400'>Todos</Title>
+                <Title className='!text-dark-500 !mb-4 !ml-4 !mt-8 dark:!text-dark-400'>Todos</Title>
                 {!isLoading ? (
                     <div className='overflow-auto'>
                         <List listTodos={todos} getTodo={getTodo} search={search} />

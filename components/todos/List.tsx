@@ -104,17 +104,17 @@ function List({ search, listTodos, getTodo }: IProps) {
         )
     } else {
         return (
-            <>
+            <div className='!mt-10'>
                 {search ? (
-                    <Detail className="!text-tertiary text-center mt-10">
+                    <Detail className="!text-tertiary text-center">
                         No Todo found with this title or detail name
                     </Detail>
                 ) : (
-                    <Detail className="!text-tertiary text-center mt-10">
+                    <Detail className="!text-tertiary text-center">
                         There is no todo
                     </Detail>
                 )}
-            </>
+            </div>
         )
     }
 }
