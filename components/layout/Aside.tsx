@@ -76,6 +76,7 @@ function Aside() {
         }}
       >
         <KeyboardDoubleArrowLeftRoundedIcon
+          className='!text-tertiary dark:!text-primary'
           sx={{
             color: theme === 'light' ? '#5C27FE !important' : '#FFFFFF !important'
           }}
