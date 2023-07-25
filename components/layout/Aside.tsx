@@ -70,7 +70,7 @@ function Aside() {
         className={`!p-[5px] hidden sm:flex !absolute !right-2 !top-2 !bg-primary
         dark:!bg-quaternary transition-all ${!openAside && 'rotate-180'}`}
       >
-        <KeyboardDoubleArrowLeftRoundedIcon className='!text-primary' />
+        <KeyboardDoubleArrowLeftRoundedIcon className='!text-tertiary' />
       </BgButton>
       <Link href='/'>
         <div className='flex items-center justify-center gap-2 !mt-12 !pr-3'>

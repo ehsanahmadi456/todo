@@ -20,13 +20,13 @@ function Field({ disabled, placeholder, name, value, onChange, type }: IProps) {
             className='w-full dark:!bg-quinary rounded-xl dark:!text-primary'
             sx={{
                 '.css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled': {
-                    WebkitTextFillColor: theme === 'light' ? '#3E3E3E' : '#FFFFFF'
+                    WebkitTextFillColor: theme === 'light' ? '#3E3E3E !important' : '#FFFFFF !important'
                 },
                 '.css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input': {
-                    color: theme !== 'light' ? '#9C9C9C' : ''
+                    color: theme !== 'light' ? '#9C9C9C !important' : ''
                 },
                 '.css-946hkh-MuiFormLabel-root-MuiInputLabel-root': {
-                    color: theme !== 'light' ? '#9C9C9C' : ''
+                    color: theme !== 'light' ? '#9C9C9C !important' : ''
                 },
                 '.MuiInputBase-root': { borderRadius: 3 },
                 '&:hover fieldset': {

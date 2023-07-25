@@ -1,17 +1,16 @@
 import Layout from "@/components/layout/Layout"
 import ProfilePage from "@/components/profile/ProfilePage"
-import User from "@/models/User";
 import { getSession } from "next-auth/react";
 
-function Profile({ user }) {
+function Profile() {
   return (
     <Layout title='Profile'>
-      <ProfilePage user={user} />
+      <ProfilePage />
     </Layout>
   )
 }
 
-export default Profile
+export default Profile;
 
 export async function getServerSideProps({ req }) {
   const session = await getSession({ req });
@@ -25,12 +24,5 @@ export async function getServerSideProps({ req }) {
     }
   }
 
-  const user = await User.findOne({ email: session.user.email })
-
-  return {
-    props: {
-      user: JSON.parse(JSON.stringify(user))
-    }
-  }
-
+  return { props: {} }
 }
