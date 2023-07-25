@@ -4,6 +4,7 @@ import Item from './item/Item';
 import Link from 'next/link';
 import { Links } from '@/globalTypes';
 import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
 
 import InfoIcon from '@mui/icons-material/InfoOutlined';
 import ClearAllIcon from '@mui/icons-material/ClearAll';
@@ -16,6 +17,7 @@ function Aside() {
 
   const setColor = (isActive: boolean) => isActive ? '#5C27FE' : '#FFFFFF'
   const [openAside, setOpenAside] = useState<boolean>(true);
+  const { theme } = useTheme()
 
   const router = useRouter();
 
@@ -69,8 +71,15 @@ function Aside() {
         onClick={() => setOpenAside(!openAside)}
         className={`!p-[5px] hidden sm:flex !absolute !right-2 !top-2 !bg-primary
         dark:!bg-quaternary transition-all ${!openAside && 'rotate-180'}`}
+        sx={{
+          background: theme === 'light' ? '#18181D !important' : '#FFFFFF !important'
+        }}
       >
-        <KeyboardDoubleArrowLeftRoundedIcon className='!text-tertiary' />
+        <KeyboardDoubleArrowLeftRoundedIcon
+          sx={{
+            color: theme === 'light' ? '#5C27FE !important' : '#FFFFFF !important'
+          }}
+        />
       </BgButton>
       <Link href='/'>
         <div className='flex items-center justify-center gap-2 !mt-12 !pr-3'>

@@ -39,6 +39,8 @@ module.exports = {
         'primary': '#FFFFFF',
         'secondary': '#C165DD',
         'tertiary': '#5C27FE',
+        'quaternary': '#18181D',
+        'quinary': '#202026',
         'dark-300': '#F7F7F9',
         'dark-400': '#F7F8FF',
         'dark-500': '#F6F7F9',
