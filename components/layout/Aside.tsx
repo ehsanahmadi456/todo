@@ -69,7 +69,7 @@ function Aside() {
     >
       <BgButton
         onClick={() => setOpenAside(!openAside)}
-        className={`!p-[5px] hidden sm:flex !absolute !right-2 !top-2 !bg-primary
+        className={`!p-[5px] !hidden sm:!flex !absolute !right-2 !top-2 !bg-primary
         dark:!bg-quaternary transition-all ${!openAside && 'rotate-180'}`}
       >
         <KeyboardDoubleArrowLeftRoundedIcon className='!text-primary' />
