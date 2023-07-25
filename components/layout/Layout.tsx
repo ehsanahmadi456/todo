@@ -11,7 +11,7 @@ interface IProps {
 
 function Layout({ children, title }: IProps) {
     return (
-        <div className="bg-dark-600 flex m-3">
+        <div className="bg-dark-600 dark:bg-quaternary flex m-3">
             <Head>
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <title>{`${title} | Todo Eh`}</title>
@@ -19,8 +19,11 @@ function Layout({ children, title }: IProps) {
             <aside>
                 <Aside />
             </aside>
-            <main className="min-w-[calc(100%-417px)]">
-                <header className="sticky right-0 top-3 shadow-[0_-12px_0_#FFFFFF] w-full bg-primary z-20">
+            <main className="w-full">
+                <header
+                    className="sticky right-0 top-3 shadow-[0_-12px_0_#FFFFFF] 
+                    dark:!shadow-[0_-12px_0_#18181D] w-full bg-primary z-20"
+                >
                     <div>
                         <Header />
                     </div>
@@ -29,7 +32,7 @@ function Layout({ children, title }: IProps) {
                     {children}
                 </section>
             </main>
-            <div>
+            <div className="hidden lg:flex">
                 <Profile />
             </div>
         </div>

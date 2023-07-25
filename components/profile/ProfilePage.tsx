@@ -35,9 +35,9 @@ function ProfilePage({ user }) {
 
   return (
     <div className="mt-4">
-      <Title className="!text-dark-500">Edit Profile</Title>
-      <SmText className="!text-dark-500">Updated At: {user.updatedAt && user.updatedAt.split('T')[0]}</SmText>
-      <ImageUser userDetail={userDetail} setUserDetail={setUserDetail} />
+      <Title className="!text-dark-500 dark:!text-dark-400">Edit Profile</Title>
+      <SmText className="!text-dark-500 dark:!text-dark-300">Updated At: {user.updatedAt && user.updatedAt.split('T')[0]}</SmText>
+      {/* <ImageUser userDetail={userDetail} setUserDetail={setUserDetail} /> */}
       <FormUser userDetail={userDetail} setUserDetail={setUserDetail} changeHandler={changeHandler} />
       <div className="flex items-center justify-between !mt-8">
         <Button

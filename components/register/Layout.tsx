@@ -17,9 +17,9 @@ function Layout({ children, title }: IProps) {
                 <title>{title} | Todo Eh</title>
             </Head>
             <div
-                className='h-screen relative w-1/2 bg-light-tertiary flex flex-col items-center justify-center rounded-tr-[150px]
-                after:absolute after:w-[150px] after:h-[150px] after:-bottom-0 after:-right-[150px] after:rounded-bl-[150px]
-                after:bg-transparent after:shadow-[-50px_50px_0_50px_#8D67FE]'
+                className='h-screen hidden relative w-1/2 bg-light-tertiary sm:flex flex-col items-center justify-center
+                rounded-tr-[150px] after:absolute after:w-[150px] after:h-[150px] after:-bottom-0 after:-right-[150px]
+                after:rounded-bl-[150px] after:bg-transparent after:shadow-[-50px_50px_0_50px_#8D67FE]'
             >
                 <div className='flex flex-col items-center justify-center'>
                     <ClearAllRoundedIcon
@@ -35,7 +35,7 @@ function Layout({ children, title }: IProps) {
                 <div className='w-1/2 h-1 bg-primary rounded-2xl my-5'></div>
 
             </div>
-            <div className='h-screen w-1/2'>
+            <div className='h-screen w-full sm:w-1/2'>
                 {children}
             </div>
         </div>

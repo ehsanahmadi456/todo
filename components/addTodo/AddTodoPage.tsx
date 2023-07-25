@@ -27,10 +27,11 @@ function AddTodoPage() {
 
     return (
         <div className="mt-4">
-            <Title className="!text-dark-500">Add Todo</Title>
+            <Title className="!text-dark-500 dark:!text-dark-400">Add Todo</Title>
             <Form from='add' data={data} setData={setData} />
             <div className="flex items-center justify-between !mt-8">
                 <Button
+                    className="dark:!text-light-tertiary dark:border-light-tertiary"
                     onClick={cancelHandler}
                     variant="outlined"
                     color="success"

@@ -10,11 +10,12 @@ import { Caption, Detail } from "@/mui/customize";
 import request from '@/services/request';
 
 interface IProps {
+    search: string,
     listTodos: Todos[],
     getTodo: () => void
 }
 
-function List({ listTodos, getTodo }: IProps) {
+function List({ search, listTodos, getTodo }: IProps) {
 
     const headTable: string[] = ['ID', 'Title', 'Detail', 'Status', 'View']
     const [idDelete, setIdDelete] = useState<string>();
@@ -31,7 +32,7 @@ function List({ listTodos, getTodo }: IProps) {
 
     if (listTodos && listTodos.length) {
         return (
-            <table className="w-full">
+            <table className="w-full table-auto	">
                 <thead>
                     <tr>
                         {headTable.map((head, idx) => (
@@ -43,15 +44,15 @@ function List({ listTodos, getTodo }: IProps) {
                 </thead>
                 <tbody>
                     {listTodos.map((todo: Todos, idx: number) => (
-                        <tr key={idx} className="border-0 border-b border-b-dark-400">
+                        <tr key={idx} className="border-0 border-b border-b-dark-400 dark:!border-b-dark-500">
                             <td className="text-center p-4">
-                                <Detail>#{idx + 1}</Detail>
+                                <Detail className='dark:!text-dark-400'>#{idx + 1}</Detail>
                             </td>
                             <td className="text-center p-4">
-                                <Detail>{todo.title}</Detail>
+                                <Detail className='dark:!text-dark-400'>{todo.title}</Detail>
                             </td>
                             <td className="p-4">
-                                <Detail>{todo.detail}</Detail>
+                                <Detail className='dark:!text-dark-400'>{todo.detail}</Detail>
                             </td>
                             <td className="text-center p-4">
                                 <Detail
@@ -103,7 +104,17 @@ function List({ listTodos, getTodo }: IProps) {
         )
     } else {
         return (
-            <Detail className="!text-tertiary text-center mt-10">There is no todo</Detail>
+            <>
+                {search ? (
+                    <Detail className="!text-tertiary text-center mt-10">
+                        No Todo found with this title or detail name
+                    </Detail>
+                ) : (
+                    <Detail className="!text-tertiary text-center mt-10">
+                        There is no todo
+                    </Detail>
+                )}
+            </>
         )
     }
 }

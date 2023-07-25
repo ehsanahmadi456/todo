@@ -8,7 +8,7 @@ import EditPage from '@/components/edit/EditPage'
 function Detail({ todos }) {
 
     const router = useRouter()
-    const id = router.query.detailId
+    const id = router.query.todoId
     const todo = todos.length && todos.find(item => item._id === id[0])
 
     return (

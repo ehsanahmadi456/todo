@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  'darkMode': 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -19,6 +20,8 @@ module.exports = {
         'primary': '#FFFFFF',
         'secondary': '#C165DD',
         'tertiary': '#5C27FE',
+        'quaternary': '#18181D',
+        'quinary': '#202026',
         'svg': '#6A7E8E',
         'dark-100': '#4B4B4B',
         'dark-200': '#5B576A',

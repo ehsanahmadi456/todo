@@ -9,6 +9,7 @@ import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import BorderColorRoundedIcon from '@mui/icons-material/BorderColorRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import Person2Icon from '@mui/icons-material/Person2';
 
 function Profile() {
 
@@ -36,30 +37,32 @@ function Profile() {
 
     return (
         <div
-            className='bg-dark-300 sticky h-fit right-0 top-3 w-56 rounded-2xl 
-            overflow-hidden pt-3 pb-5 px-5 flex flex-col'
+            className='bg-dark-300 dark:!bg-quinary sticky h-fit right-0 top-3 w-56 rounded-2xl 
+            overflow-hidden pt-3 pb-5 px-5 flex flex-col dark:!shadow dark:!shadow-dark-500'
         >
             <div className="mt-8 flex items-center justify-between px-4">
                 <Tooltip title={tooltip} onClick={copyHandler} placement="top">
                     <ContentCopyOutlinedIcon fontSize='small' style={{ color: '#8293A1', width: 17, height: 17 }} />
                 </Tooltip>
-                <Image
-                    className='rounded-full border-4 border-dark-400 shadow-xl'
+                <Person2Icon className='rounded-full border-4 border-dark-500 p-3 shadow-xl w-16 h-16' />
+                {/* <Image
+                   
                     src='/images/ehsan.jpg'
                     width={70}
                     height={70}
                     alt='profile'
-                />
+                /> */}
                 <NotificationsNoneOutlinedIcon fontSize='small' style={{ color: 'transparent', cursor: 'default' }} />
             </div>
             <div className='mt-5'>
                 <Caption className='!text-center mb-3'>Welcome!</Caption>
-                <Detail className='!text-center'>{data && data.user && data.user.email || ''}</Detail>
+                <Detail className='!text-center dark:!text-dark-300'>{data && data.user && data.user.email || ''}</Detail>
             </div>
             <div className='flex items-center gap-2 mt-5'>
                 <Button
                     onClick={logoutHandler}
-                    className='!text-sm !rounded-xl !border !border-solid !border-dark-300 !w-full !text-dark-200 py-2 font-medium'
+                    className='!text-sm !rounded-xl !border !border-solid !border-dark-300 !w-full
+                    !text-dark-200 py-2 font-medium dark:!text-dark-300 dark:!border-dark-500'
                 >
                     Logout
                     {isLoading ? (

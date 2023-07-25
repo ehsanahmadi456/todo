@@ -31,13 +31,27 @@ function Form({ from, data, setData }: IProps) {
 
     return (
         <div className="mt-4">
-            <Detail className="!mb-2 !mt-2">Caption: </Detail>
-            <div className="flex flex-row !mt-4 items-start gap-7">
-                <Field disabled={from === 'detail'} type='text' placeholder='Title...' name='title' value={data.title} onChange={changeHandler} />
-                <Field disabled={from === 'detail'} type='text' placeholder='Detail' name='detail' value={data.detail} onChange={changeHandler} />
+            <Detail className="!mb-2 !mt-2 dark:!text-dark-300">Caption: </Detail>
+            <div className="flex flex-col sm:flex-row !mt-4 items-start gap-7">
+                <Field
+                    disabled={from === 'detail'}
+                    onChange={changeHandler}
+                    placeholder='Title...'
+                    value={data.title}
+                    type='text'
+                    name='title'
+                />
+                <Field
+                    disabled={from === 'detail'}
+                    onChange={changeHandler}
+                    placeholder='Detail'
+                    value={data.detail}
+                    type='text'
+                    name='detail'
+                />
             </div>
             <FormControl>
-                <Detail className="!mb-2 !mt-6">Status: </Detail>
+                <Detail className="!mb-2 !mt-6 dark:!text-dark-300">Status: </Detail>
                 <RadioGroup
                     name='status'
                     value={data.status}
@@ -49,12 +63,17 @@ function Form({ from, data, setData }: IProps) {
                             disabled={from === 'detail'}
                             key={idx}
                             className={`!${item.bgColor} ${item.color} !py-2 !pl-2 !pr-4 !rounded-2xl`}
+                            sx={{
+                                '.MuiFormControlLabel-label.Mui-disabled': {
+                                    color: item.color === 'text-success' ? 'green' : item.color === 'text-progress' ? 'orange' : item.color === 'text-error' ? 'red' : 'gray'
+                                }
+                            }}
                             control={
                                 <Radio
-                                    className={`!px-0 !py-0 !mr-2 ${item.color}`}
+                                    className={`!px-0 !py-0 !mr-2 !${item.color}`}
                                     sx={{
                                         '&, &.Mui-checked': {
-                                            color: item.codeColor,
+                                            color: `${item.codeColor} !important`,
                                         },
                                     }}
                                 />

@@ -13,7 +13,7 @@ interface IProps {
 function DetailPage({ todo }: IProps) {
 
     const router = useRouter()
-    const id = router.query.detailId || ''
+    const id = router.query.todoId || ''
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [data, setData] = useState<Todos>({

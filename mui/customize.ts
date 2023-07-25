@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Typography, TextField, Button } from "@mui/material";
+import { Typography, TextField, Button, Switch } from "@mui/material";
 
 const Head = styled(Typography)({ fontSize: 30, color: '#FFFFFF', fontWeight: 600 })
 
@@ -16,11 +16,6 @@ const Form = styled(TextField)({
     '.css-1x51dt5-MuiInputBase-input-MuiInput-input': { color: '#A3AFB9' }
 })
 
-const Input = styled(TextField)({
-    // background: '#F7F7F9', padding: '6px 18px', borderRadius: 16,
-    // '.css-1x51dt5-MuiInputBase-input-MuiInput-input': { color: '#A3AFB9' }
-})
-
 const BgButton = styled(Button)({ background: 'rgba(92,39,254,0.7) !important', borderRadius: 12 })
 
-export { Title, SmText, Detail, Caption, Form, BgButton, Input, Head };
+export { Title, SmText, Detail, Caption, Form, BgButton, Head };
